@@ -1,20 +1,22 @@
 # Modulo8_LLMOps_Deployment
-# ⚔️ Kratos Motivational Agent — Módulo 8: Deployment
+# ⚔️ Kratos Motivational Agent — Backend
 
 Agente conversacional motivacional construido con **LangChain + LangGraph**, expuesto como API REST con **FastAPI** y desplegado en contenedores Docker. El agente responde desde la personalidad de **Kratos, el Dios de la Guerra**, dando consejos de vida con la gravedad y filosofía del personaje.
+
+> Este repositorio es el **backend**. El frontend vive en [Modulo8_Deployment_Front](https://github.com/alzamoralabs/Modulo8_Deployment_Front).
 
 ---
 
 ## 🏗️ Arquitectura
 
 ```
-┌─────────────────────┐        HTTP        ┌──────────────────────────┐
-│   kratos-frontend   │ ────────────────► │     kratos-agent         │
-│   Streamlit :8501   │                   │     FastAPI :8000         │
-└─────────────────────┘                   │     LangGraph Agent       │
-                                          │     Amazon Bedrock        │
-                                          │     Claude Haiku 3.5      │
-                                          └──────────────────────────┘
+┌──────────────────────────────────────────┐      HTTP      ┌──────────────────────────┐
+│   Modulo8_Deployment_Front               │ ────────────► │   Modulo8_Deployment     │
+│   Streamlit :8501                        │               │   FastAPI :8000           │
+│   github.com/alzamoralabs/               │               │   LangGraph Agent         │
+│   Modulo8_Deployment_Front               │               │   Amazon Bedrock          │
+└──────────────────────────────────────────┘               │   Claude Haiku 3.5        │
+                                                           └──────────────────────────┘
 ```
 
 ---
@@ -176,3 +178,12 @@ La API queda disponible en `http://127.0.0.1:8000`.
 | `AWS_REGION` | ✅ | Región AWS (default: `us-east-1`) |
 | `BEDROCK_MODEL_ID` | ✅ | ID del inference profile de Bedrock |
 | `AWS_SESSION_TOKEN` | ❌ | Solo para credenciales temporales (SSO/STS) |
+
+---
+
+## 🔗 Repositorios relacionados
+
+| Repo | Descripción |
+|---|---|
+| [Modulo8_Deployment](https://github.com/alzamoralabs/Modulo8_Deployment) | Backend — Este repositorio |
+| [Modulo8_Deployment_Front](https://github.com/alzamoralabs/Modulo8_Deployment_Front) | Frontend — Streamlit |
